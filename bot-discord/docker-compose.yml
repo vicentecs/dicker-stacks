@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  bot-discord:
+    container_name: bot-discord
+    image: bot-discord
+    environment:
+      TZ: 'America/Sao_Paulo'
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      DISCORD_CHANNEL: ${DISCORD_CHANNEL}
+      DISCORD_TOKEN: ${DISCORD_TOKEN}
+    restart: unless-stopped
